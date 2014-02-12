@@ -29,10 +29,10 @@ require_once 'funciones_bd.php';
             echo 'Equipo';
         foreach ($resultado as $registro){
             echo $registro['nombre']."</br>";
-        }
+                }
         }
         
-        echo "Conexión realizada con éxito";
+        
         $bd = null;
         ?>
         </div>
