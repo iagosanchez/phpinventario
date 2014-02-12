@@ -21,6 +21,17 @@ require_once 'funciones_bd.php';
         <div> Test de prueba de conexión </br>
             <?php
         $bd = conectaDb();
+        $consulta = 'SELECT * FROM equipo ORDER BY nombre';
+        $resultado = $bd ->query($consulta);
+        if (!$resultado){
+            echo 'Error en la consulta';
+        } else {
+            echo 'Equipo';
+        foreach ($resultado as $registro){
+            echo $registro['nombre']."</br>";
+        }
+        }
+        
         echo "Conexión realizada con éxito";
         $bd = null;
         ?>

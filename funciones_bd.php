@@ -17,3 +17,7 @@ function conectaDb()
     }
 }
 
+
+//Función de consulta
+
+
