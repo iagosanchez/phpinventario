@@ -26,7 +26,7 @@ require_once 'funciones_bd.php';
         if (!$resultado){
             echo 'Error en la consulta';
         } else {
-            echo 'Equipo</br>';
+            echo "Equipo<br>Nombre<br>";
         foreach ($resultado as $registro){
             echo $registro['nombre']."</br>";
                 }
