@@ -17,7 +17,7 @@ require_once 'funciones_bd.php';
     </head>
     <body>
         <div>INVENTARIO</div>
-        <div><a href="formulario_nuevobd.php"> Nuevo equipo </a></div>   
+        <div><a href="formulario_nuevo_equipo.php"> Nuevo equipo </a></div>   
      
             <?php
         $bd = conectaDb();
