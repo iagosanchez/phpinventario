@@ -17,8 +17,8 @@ require_once 'funciones_bd.php';
     </head>
     <body>
         <div>INVENTARIO</div>
-        
-        <div> Test de prueba de conexión </br>
+        <div><a href="formulario_nuevobd.php"> Nuevo equipo </a></div>   
+     
             <?php
         $bd = conectaDb();
         $consulta = 'SELECT * FROM equipo ORDER BY nombre';
@@ -26,7 +26,7 @@ require_once 'funciones_bd.php';
         if (!$resultado){
             echo 'Error en la consulta';
         } else {
-            echo "Equipo<br>Nombre<br>";
+            echo "Nombre<br>";
         foreach ($resultado as $registro){
             echo $registro['nombre']."</br>";
                 }
