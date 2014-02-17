@@ -13,14 +13,18 @@ define('MSG_ERR_RAM', 'El valor de la ram no es válido');
 
 
 function validarNombre($valor){
+    
     return TRUE;
 }
 function validarDesc($valor){
+    
     return TRUE;
 }
 function validarIp($valor){
+    
     return TRUE;
 }
 function validarRam($valor){
+    
     return TRUE;
 }

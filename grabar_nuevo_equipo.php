@@ -9,12 +9,12 @@ require_once 'funciones_validar.php';
 
 function validarDatosRegistro() {
     //validar datos enviados desde formulario_nuevo_equipo.php
-    $datosEquipo = Array ();
+    $datos = Array ();
      $datos[0] = (isset($_REQUEST['nombre']))?
             $_REQUEST['nombre']:"";
     
-    $datos[1] = (isset($_REQUEST['descripcion']))?
-            $_REQUEST['descripcion']:"";
+    $datos[1] = (isset($_REQUEST['desc']))?
+            $_REQUEST['desc']:"";
     
     $datos[2] = (isset($_REQUEST['ip']))?
             $_REQUEST['ip']:"";
@@ -30,6 +30,9 @@ function validarDatosRegistro() {
     //asignar a variables de sesión 
     $_SESSION['datos'] = $datos;
     $_SESSION['errores'] = $errores;
+    $_SESSION['hayErrores'] =
+            ($errores[0] || $errores[1] || 
+            $erorres[2] || $errores[3]);
     
 }
 
@@ -37,3 +40,10 @@ function validarDatosRegistro() {
 //PRINCIPAL
 
 validarDatosRegistro();
+if ($_SESSION['hayErrores']) {
+    $url = 'formulario_nuevo_equipo.php';
+    header('location:'.$url);
+    
+} else {
+    echo "Grabar Equipo en Base de datos";
+}
