@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once 'funciones_validar.php';
+require_once 'constantes.php';
 
 $_SESSION['datos'] = (isset ($_SESSION['datos']))?
         $_SESSION['datos']:Array ("", "", "","");
@@ -20,10 +20,14 @@ $_SESSION['hayErrores'] = (isset ($_SESSION['hayErrores']))?
     <body>
         <div><b>Datos nuevo Equipo<b></div>
         <form action="grabar_nuevo_equipo.php" method="GET">
-            <p>Nombre: <br><input type="text" name="nombre"/>
-            <p>Descripción: <br> <input type="text" name="desc"/>
-            <p>IP: <br><input type="text" name="ip"/>
-            <p>RAM: <br><input type="text" name="ram"/> 
+            <p>Nombre: <br><input type="text" name="nombre"
+                                  value="<?php echo $_SESSION['datos'][0]; ?>"/>
+            <p>Descripción: <br> <input type="text" name="desc"
+                                      value="<?php echo $_SESSION['datos'][1]; ?>"  />
+            <p>IP: <br><input type="text" name="ip"
+                              value="<?php echo $_SESSION['datos'][2]; ?>"/>
+            <p>RAM: <br><input type="text" name="ram"
+                               value="<?php echo $_SESSION['datos'][3]; ?>"/> 
             <p><input type="submit" value="Registrar"/></p>
         </form>
     </body>
