@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once 'funciones_bd.php';
 require_once 'funciones_validar.php';
 /* 
  * To change this license header, choose License Headers in Project Properties.
@@ -21,7 +22,7 @@ function validarDatosRegistro() {
     
     $datos[3] = (isset($_REQUEST['ram']))?
             $_REQUEST['ram']:"";
-
+//validar datos
     $errores = Array ();
     $errores[0] = !validarNombre($datos[0]);
     $errores[1] = !validarDesc($datos[1]);
@@ -45,5 +46,20 @@ if ($_SESSION['hayErrores']) {
     header('location:'.$url);
     
 } else {
-    echo "Grabar Equipo en Base de datos";
+    $bd = conectaBd();
+    $consulta = "INSERT INTO Equipo (nombre, descripcion, ip, ram)
+    VALUES ('"
+            .$_SESSION['datos'][0]."', '"
+           .$_SESSION['datos'][1]."', '"
+           .$_SESSION['datos'][2]."', " 
+           .$_SESSION['datos'][3].")";
+ //print_r($consulta);
+    if ($bd->query($consulta)) {
+           $url = "grabacion_ok.php";
+           header('Location:'.$url);
+    } else {
+            $url = "error.php?msg_error=Error_BD";
+            header('Location:'.$url);
+    }
+    $bd = null;
 }

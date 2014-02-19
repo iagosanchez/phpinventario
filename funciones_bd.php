@@ -12,7 +12,6 @@ function conectaDb()
 {
     try {
         $db = new PDO(BD_CONEX_PDO, BD_USUARIO, BD_PASSWORD);
-        $db->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
         return($db);
     } catch (PDOException $e) {
         print "<p>Error: No puede conectarse con la base de datos.</p>\n";
