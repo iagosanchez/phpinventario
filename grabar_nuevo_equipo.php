@@ -14,8 +14,8 @@ function validarDatosRegistro() {
      $datos[0] = (isset($_REQUEST['nombre']))?
             $_REQUEST['nombre']:"";
     
-    $datos[1] = (isset($_REQUEST['desc']))?
-            $_REQUEST['desc']:"";
+    $datos[1] = (isset($_REQUEST['descripcion']))?
+            $_REQUEST['descripcion']:"";
     
     $datos[2] = (isset($_REQUEST['ip']))?
             $_REQUEST['ip']:"";
@@ -33,7 +33,7 @@ function validarDatosRegistro() {
     $_SESSION['errores'] = $errores;
     $_SESSION['hayErrores'] =
             ($errores[0] || $errores[1] || 
-            $erorres[2] || $errores[3]);
+            $errores[2] || $errores[3]);
     
 }
 
@@ -46,7 +46,7 @@ if ($_SESSION['hayErrores']) {
     header('location:'.$url);
     
 } else {
-    $bd = conectaBd();
+    $bd = conectaDb();
     $consulta = "INSERT INTO Equipo (nombre, descripcion, ip, ram)
     VALUES ('"
             .$_SESSION['datos'][0]."', '"
