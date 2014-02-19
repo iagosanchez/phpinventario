@@ -14,6 +14,7 @@ require_once 'funciones_bd.php';
         <title>INVENTARIO</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        <link href="estilo.css" type="text/css" rel="stylesheet"/>
     </head>
     <body>
         <div>INVENTARIO</div>

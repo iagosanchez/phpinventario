@@ -3,11 +3,15 @@
 /* 
  * Funciones de acceso y manejo de base de datos
  */
+define('BD_USUARIO', 'root');
+define('BD_PASSWORD', 'abc123.');
+define('BD_NOME', 'inventario');
+define('BD_CONEX_PDO', 'mysql:host=localhost;dbname='.BD_NOME);
 // FUNCIÓN DE CONEXIÓN CON LA BASE DE DATOS MYSQL
 function conectaDb()
 {
     try {
-        $db = new PDO("mysql:host=localhost; dbname=Inventario", "root", "abc123.");
+        $db = new PDO(BD_CONEX_PDO, BD_USUARIO, BD_PASSWORD);
         $db->setAttribute(PDO::MYSQL_ATTR_USE_BUFFERED_QUERY, true);
         return($db);
     } catch (PDOException $e) {
