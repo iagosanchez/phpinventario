@@ -10,10 +10,17 @@ estilo1
 class funciones_bd << (F, orchild) php>>{
 script: bd
 }
-class formulario_equipo_nuevo <<php>>
+class formulario_equipo_nuevo <<php>>{
+Informacion sobre nuevo equipo
+}
 class SESSION <<php>>
 class grabar_equipo <<php>>
-class formulario <<formulario>>
+class formulario <<formulario>>{
+nombre text, 
+desc text, 
+ip text, 
+ram text
+}
 index --> formulario_equipo_nuevo: link
 index ..> funciones_bd: include
 index ..> estilo: include
