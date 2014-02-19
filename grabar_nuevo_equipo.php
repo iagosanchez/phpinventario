@@ -23,10 +23,10 @@ function validarDatosRegistro() {
             $_REQUEST['ram']:"";
 
     $errores = Array ();
-    $errores[0] = validarNombre($datos[0]);
-    $errores[1] = validarDesc($datos[1]);
-    $errores[2] = validarIp($datos[2]);
-    $errores[3] = validarRam($datos[3]);
+    $errores[0] = !validarNombre($datos[0]);
+    $errores[1] = !validarDesc($datos[1]);
+    $errores[2] = !validarIp($datos[2]);
+    $errores[3] = !validarRam($datos[3]);
     //asignar a variables de sesión 
     $_SESSION['datos'] = $datos;
     $_SESSION['errores'] = $errores;
