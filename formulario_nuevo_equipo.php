@@ -22,10 +22,7 @@ $_SESSION['hayErrores'] = (isset ($_SESSION['hayErrores']))?
         <form action="grabar_nuevo_equipo.php" method="GET">
             <div>Nombre: <br><input type="text" name="nombre"
                                     value="<?php echo $_SESSION['datos'][0]; ?>"/></div>
-            <?php
-                if ($_SESSION['errores'][0]) {
-                    echo "<div class 'error'>".MSG_ERR_NOMBRE."</div>";
-                }
+            <?d
             ?>
             <div>Descripción: <br> <input type="text" name="desc"
                                           value="<?php echo $_SESSION['datos'][1]; ?>"  /></div>
