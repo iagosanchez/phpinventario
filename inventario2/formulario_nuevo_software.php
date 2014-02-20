@@ -12,7 +12,7 @@ and open the template in the editor.
     </head>
     <body>
         <div>TODO write content</div>
-        <form action="resultado1.php" method="GET">
+        <form action="grabar_nuevo_software.php" method="GET">
             <p>Titulo: <input type="text" name="titulo" /></p>
             <p>Url <input type="text" name="url" /></p>
             <p><input type="submit" value="Enviar" /></p>

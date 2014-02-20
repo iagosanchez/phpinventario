@@ -9,7 +9,7 @@ $url = $_REQUEST['url'];
 $consulta = "INSERT INTO software
 (titulo, url)
 VALUES (:titulo, :url)";
-$resultado = $db->prepare($consulta);
+$resultado = $bd->prepare($consulta);
 if ($resultado->execute(array(":titulo" => $titulo, ":url" => $url))) {
     $url2 = 'listado_software.php';
     header('location:'.$url2);
@@ -17,7 +17,7 @@ if ($resultado->execute(array(":titulo" => $titulo, ":url" => $url))) {
     print "<p>Error al crear el registro.</p>\n";
 }
 
-$db = null;
+$bd = null;
 
 
 ?>
