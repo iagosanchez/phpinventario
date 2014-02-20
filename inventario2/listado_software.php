@@ -16,6 +16,10 @@ and open the template in the editor.
     </head>
     <body>
         <div>Listado de Software</div>
+        <div><a href="formulario_nuevo_software.php">
+                Agregar nuevo Software</a>
+        </div>
+        
              <?php
         $bd = conectaBd();
         $consulta = 'SELECT * FROM software ORDER BY titulo';

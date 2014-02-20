@@ -13,8 +13,8 @@ and open the template in the editor.
     <body>
         <div>TODO write content</div>
         <form action="resultado1.php" method="GET">
-            <p>Nombre: <input type="text" name="nombre" /></p>
-            <p>Apellido <input type="text" name="apellido" /></p>
+            <p>Titulo: <input type="text" name="titulo" /></p>
+            <p>Url <input type="text" name="url" /></p>
             <p><input type="submit" value="Enviar" /></p>
         </form>
     </body>
