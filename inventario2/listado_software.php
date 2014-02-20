@@ -22,7 +22,7 @@ and open the template in the editor.
         
              <?php
         $bd = conectaBd();
-        $consulta = 'SELECT * FROM software ORDER BY titulo';
+        $consulta = 'SELECT * FROM software';
         $resultado = $bd ->query($consulta);
         if (!$resultado){
             echo 'Error en la consulta';

@@ -16,19 +16,20 @@
 // Constantes
 
 
-define('MSG_ERR_TITULO', "Error de título");
-define('MSG_ERR_URL', "Error de url");
+define('MSG_ERR', "Error...");
+define('MSG_ERR_TITULO', "Error Titulo...");
+define('MSG_ERR_URL', "Error URL...");
 
 
 // Funciones de validación
 
 function limpiar($valor) {
-    return strip_tags(trim(htmlspecialchars($valor, ENT_QUOTES, "ISO-8859-1")));
+    return strip_tags(trim(htmlspecialchars($valor, ENT_QUOTES, "ISO-8859-1"))); 
 }
 
 function validarTitulo($valor) {
     $valor = limpiar($valor);
-    if (strlen($valor)>0){
+    if (strlen($valor)>0 && strlen($valor)<=50){
         return TRUE;
     } else {
         return FALSE;
