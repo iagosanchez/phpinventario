@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <?php
 session_start();
 require_once 'funciones.php';
@@ -34,7 +29,7 @@ $_SESSION['hayErrores'] = (isset ($_SESSION['hayErrores']))?
             ?>
             
             
-            <div>Url <input type="text" name="url" value="<<?php echo $_SESSION['datos'][1]; ?>>" /></div>
+            <div>Url <input type="text" name="url" value="<?php echo $_SESSION['datos'][1]; ?>" /></div>
             <?php
                 if ($_SESSION['errores'][1]) {
                     echo "<div class 'error'>".MSG_ERR_URL."</div>";
