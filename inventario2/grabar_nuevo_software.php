@@ -45,8 +45,13 @@ if ($_SESSION['hayErrores']) {
     VALUES (:titulo, :url)";
     $resultado = $db->prepare($consulta);
     if ($resultado->execute(array(":titulo" => $titulo, ":url" => $url))) {
-        $url = "listado_software.php";
-        header('Location:'.$url);
+        //vaciamos las variables de sesión si todo va bien.
+        unset ($_SESSION['datos']);
+        unset ($_SESSION['errores']);
+        unset ($_SESSION['hayErrores']);
+       // redirigimos a la página del listado 
+        $destino = "listado_software.php";
+        header('Location:'.$destino);
     } else {
         print "<p>Error al crear el registro.</p>\n";
     }

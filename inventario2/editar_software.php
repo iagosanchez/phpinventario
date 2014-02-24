@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <?php
 session_start();
 require_once 'funciones.php';
@@ -15,6 +9,19 @@ $_SESSION['errores'] = (isset ($_SESSION['errores']))?
 $_SESSION['hayErrores'] = (isset ($_SESSION['hayErrores']))?
         $_SESSION['hayErrores']:FALSE;
 
+/*
+ * Cargar de la base de datos
+ */
+$_SESSION['id'] = (isset ($_REQUEST['id']))?
+        $_REQUEST['id']:$_SESSION['id'];
+
+$bd = conectaBd();
+$consulta = "SELECT * FROM software WHERE id=".$_SESSION['id'];
+$resultado = $bd ->query($consulta);
+if (!$resultado){
+    $url = "error.php?msg_error=error_Consulta_Editar";
+    header('Location', $url);
+}
 ?>
 
 <html>
