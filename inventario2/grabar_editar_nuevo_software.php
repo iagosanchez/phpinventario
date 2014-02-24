@@ -46,7 +46,7 @@ if ($_SESSION['hayErrores']) {
     
     $consulta = "UPDATE software SET
         titulo = :titulo
-        url=:url
+        url= :url
         WHERE id= :id";
     
     $resultado = $db->prepare($consulta);
