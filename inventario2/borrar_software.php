@@ -1,11 +1,7 @@
 <?php
 session_start();
 require_once 'funciones_bd.php';
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 $db = conectaBd();
    $id = $_SESSION['id'];
