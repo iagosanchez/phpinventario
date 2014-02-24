@@ -44,7 +44,7 @@ and open the template in the editor.
             echo "</td>";
             $irEditar = "editar_software.php?id=".$registro['id'];
             echo "<td><a href=".$irEditar.">Editar</a></td>";
-            $irBorrar = "borrar_software.php?id=".$registro['id'];
+            $irBorrar = "confirmar_eliminar_software.php?id=".$registro['id'];
             echo "<td><a href=".$irBorrar.">Eliminar</a></td>";
             echo "</tr>";
             

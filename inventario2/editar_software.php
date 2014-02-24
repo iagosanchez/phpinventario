@@ -42,7 +42,7 @@ if (!$resultado){
     </head>
     <body>
         <div>TODO write content</div>
-        <form action="editar_software.php" method="GET">
+        <form action="grabar_editar_nuevo_software.php" method="GET">
             <div>Titulo: <input type="text" name="titulo" value="<?php echo $_SESSION['datos'][0]; ?>" /></div>
             <?php
                 if ($_SESSION['errores'][0]) {
