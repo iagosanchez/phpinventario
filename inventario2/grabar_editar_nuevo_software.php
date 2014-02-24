@@ -45,7 +45,7 @@ if ($_SESSION['hayErrores']) {
     
     
     $consulta = "UPDATE software SET
-        titulo = :titulo
+        titulo = :titulo,
         url= :url
         WHERE id= :id";
     
