@@ -51,7 +51,7 @@ if (!$resultado){
             ?>
             
             
-            <div>Url <input type="text" name="url" value="<<?php echo $_SESSION['datos'][1]; ?>>" /></div>
+            <div>Url <input type="text" name="url" value="<?php echo $_SESSION['datos'][1]; ?>" /></div>
             <?php
                 if ($_SESSION['errores'][1]) {
                     echo "<div class 'error'>".MSG_ERR_URL."</div>";
