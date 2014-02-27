@@ -2,7 +2,7 @@
 
 
 <?php
-
+require_once 'head.php';
 
 
 // Constantes

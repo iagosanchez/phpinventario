@@ -1,5 +1,6 @@
 <?php
 require_once 'funciones_bd.php';
+require_once 'head.php';
 ?>
 
 

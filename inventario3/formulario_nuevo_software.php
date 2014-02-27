@@ -1,6 +1,7 @@
 
 <?php
 session_start();
+require_once 'head.php';
 require_once 'funciones.php';
 
 $_SESSION['datos'] = (isset ($_SESSION['datos']))?

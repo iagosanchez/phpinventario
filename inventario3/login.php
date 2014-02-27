@@ -15,10 +15,10 @@ if ($login == "" || $password == ""){
 
 $bd = conectaBd();
 
-$consulta = "SELECT * FROM usuarios WHERE login =:login and password =:password";
+$consulta = "SELECT * FROM usuarios WHERE login = :login and password = :password";
 $resultado = $bd -> prepare($consulta);
 
-if ($resultado-> execute (array(":login" => $login, ":password" => $password))) {
+if (!$resultado-> execute (array(":login" => $login, ":password" => $password))) {
     $url = "error.php?msg_error=error_Consulta_Login";
     header("Location:", $url);
   

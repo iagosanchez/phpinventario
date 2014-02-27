@@ -2,6 +2,7 @@
 session_start();
 require_once 'funciones_bd.php';
 require_once 'funciones.php';
+require_once 'head.php';
 
 
 function validarDatosRegistro() {

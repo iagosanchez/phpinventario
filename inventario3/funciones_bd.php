@@ -1,5 +1,5 @@
 <?php
-
+require_once 'head.php';
 /* 
  * Funciones Acceso y Manejo de BBDD
  */
