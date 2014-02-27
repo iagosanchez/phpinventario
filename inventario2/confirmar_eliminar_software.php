@@ -18,7 +18,7 @@ require_once 'funciones_bd.php';
 
 
 $_SESSION['id'] = (isset ($_REQUEST['id']))?
-        $_REQUEST['id']:$_SESSION['id'];
+        $_REQUEST['id']:0;
 
 $bd = conectaBd();
 $consulta = "SELECT * FROM software WHERE id=".$_SESSION['id'];
