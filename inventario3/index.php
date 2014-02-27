@@ -8,7 +8,17 @@
     </head>
     <body>
         <div>INVENTARIO 3</div>
-        <div>Acceso a Listado de Favoritos </div>
-        <div><a href="listado_software.php">Enlace a Software</a></div>
+        <div> 
+               
+        <form action="login.php" method="GET">
+            <div>Login: <input type="text" name="login"/></div>
+            
+            <div>Password: <input type="password" name="password"/></div>
+          
+            
+            
+            <p><input type="submit" value="Enviar" /></p>
+        </form>
+            </div>
     </body>
 </html>
