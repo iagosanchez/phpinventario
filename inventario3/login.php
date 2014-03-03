@@ -7,6 +7,7 @@ $login = (isset ($_REQUEST['login']))?
 $password = (isset ($_REQUEST['password']))?
         $_REQUEST['password']:"";
 
+
 if ($login == "" || $password == ""){
     $url = "index.php";
     header('Location:'.$url);
@@ -28,7 +29,7 @@ if (!$resultado-> execute (array(":login" => $login, ":password" => $password)))
            $url = "error.php?msg_error=Error_Usuario_inexistente";
            header("Location:".$url);
        } else {
-           $_SESSION['usuarios'] = $registro['nombre'];
+           $_SESSION['usuario'] = $registro['nombre'];
            $url = "listado_software.php";
            header("Location:".$url);
        }
