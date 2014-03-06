@@ -22,7 +22,7 @@ function validarDatosRegistro() {
     $errores = Array();
     $errores[0] = !validarNombreProducto($datos[0]);
     $errores[1] = !validarPrecio($datos[1]);
-    $errores[2] = !validarExistencia($datos[1]);
+    $errores[2] = !validarExistencia($datos[2]);
 
     // ----- Asignar a variables de Sesión ----//
     $_SESSION['datos'] = $datos;
@@ -31,6 +31,12 @@ function validarDatosRegistro() {
             ($errores[0] || $errores[1] || $errores[2]);
     
 }
+
+validarDatosRegistro();
+if ($_SESSION['hayErrores']) {
+    $url = "falta2.php";
+    header('Location:'.$url);
+}else{
 
     $db = conectaBd();
     $nombre_producto = $_REQUEST['NombreProducto'];
@@ -51,6 +57,6 @@ function validarDatosRegistro() {
     }
 
     $db = null;
-
+}
 
 ?>
