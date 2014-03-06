@@ -1,11 +1,18 @@
 <html>
     <head>
-        <title>Confirmar borrado</title>
+        <title>Examen 2T</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="estilo.css">
     </head>
     <body>
-        <div>¿Confirmar borrado?</div>
+        <div class="formulario">&nbsp;</div>
+        <h1>¿Confirmar Borrado?</h1>
+        <ul>
+        <li><a href="index.php">Inicio</a></li>            
+        <li><a href="listado.php">Listado</a></li>
+        </ul>
+     
         
     </body>
 </html>
@@ -22,8 +29,8 @@ $_SESSION['IdProducto'] = (isset ($_REQUEST['IdProducto']))?
 
 $bd = conectaBd();
 
-$consulta = "SELECT * FROM producto WHERE IdProducto=".$_SESSION['NombreProducto'];
-$resultado = $bd ->prepare($consulta);
+$consulta = "SELECT * FROM producto WHERE IdProducto=".$_SESSION['IdProducto'];
+$resultado = $bd ->query($consulta);
 
 if (!$resultado){
     $url = "error.php?msg_error=error_Consulta_Editar";
@@ -43,14 +50,12 @@ if (!$resultado){
            
            echo "<table border=1>";
            echo "<tr>";
-           echo "<th>ID Producto</th>";
+        
            echo "<th>Nombre Producto</th>";
            echo "<th>Precio Unidad</th>";
            echo "<th>Unidades existencias</th>";
            echo "<tr>";
-           echo "<td>";
-           echo $_SESSION['IdProducto'];
-           echo "</td>";
+           
            echo "<td>";
            echo $registro['NombreProducto'];
            echo "</td>";
