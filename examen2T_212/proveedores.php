@@ -12,8 +12,52 @@ and open the template in the editor.
         <link rel="stylesheet" href="estilo.css">
     </head>
     <body>
-        <div class="caja">Usuario: Test - Logout</div>
+        <div class="caja"><?php<?php
+session_start();
+if (!isset($_SESSION['usuario'])) {
+    $url="error.php?msg_error=REQUIERE_LOGIN";
+    header("Location:".$url);
+}
+echo "<div>";
+echo "Usuario=".$_SESSION['usuario'];
+echo "</div>";
+echo "<div>";
+echo "<a href=logout.php>Logout</a>";
+echo "</div>";
+?></div>
         <div class="proveedores">&nbsp;</div>
         <h1>Listado de Proveedores</h1> 
     </body>
 </html>
+
+ <?php
+ require_once 'bbdd.php';
+ 
+            $bd = conectaBd();
+            $consulta = "SELECT * FROM proveedor ORDER By NombreEmpresa";
+            $resultado = $bd->query($consulta);
+            if (!$resultado) {
+                $url = "error.php?msg_error=Listado1_Error_Consulta";
+                header('Location:'.$url);
+            } else {
+                echo "<table border=1 width=100%>";
+                echo "<tr>";
+                echo "<th>Empresa</th>";
+                echo "<th>Contacto</th>";
+                echo "<th>Cargo</th>";
+                echo "<th>Pais</th>";
+                echo "<th>Telefono</th>";
+                echo "</tr>";
+                foreach($resultado as $registro) {
+                    echo "<tr>";
+                    echo "<td align=center>".$registro['NombreEmpresa']."</td>";
+                    echo "<td align=center>".$registro['NombreContacto']."</td>";
+                    echo "<td align=center>".$registro['CargoContacto']."</td>";        
+                    echo "<td align=center>".$registro['Pais']."</td>";
+                    echo "<td align=center>".$registro['Telefono']."</td>";        
+                   }
+                echo "</table>";
+            }
+            
+            $bd = null;
+?>
