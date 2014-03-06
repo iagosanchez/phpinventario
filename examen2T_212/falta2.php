@@ -36,14 +36,13 @@ $_SESSION['hayErrores'] = (isset ($_SESSION['hayErrores']))?
                 }
             ?>
             <div>Precio Unidad <input type="text" name="PrecioUnidad" value="<?php echo $_SESSION['datos'][1]; ?>"/></div>
-            </div>
-             <?php
+            <?php
                 if ($_SESSION['errores'][1]) {
                     echo "<div class 'error'>".MSG_ERR_PRECIO."</div>";
                 }
             ?>
              <div>Existencias <input type="text" name="UnidadesExistencia" value="<?php echo $_SESSION['datos'][2]; ?>"/></div>
-            </div>
+                       
              <?php
                 if ($_SESSION['errores'][2]) {
                     echo "<div class 'error'>".MSG_ERR_EXISTENCIAS."</div>";

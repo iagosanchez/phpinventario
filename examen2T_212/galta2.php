@@ -1,6 +1,8 @@
 <?php
+session_start();
 require_once 'bbdd.php';
 require_once 'func.php';
+
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
