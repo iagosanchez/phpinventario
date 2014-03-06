@@ -1,8 +1,10 @@
 
 <?php
 session_start();
+require_once 'func.php';
+
 $_SESSION['datos'] = (isset ($_SESSION['datos']))?
-        $_SESSION['datos']:Array ("", "","");
+        $_SESSION['datos']:Array ("", "", "");
 $_SESSION['errores'] = (isset ($_SESSION['errores']))?
         $_SESSION['errores']:Array (FALSE, FALSE, FALSE);
 $_SESSION['hayErrores'] = (isset ($_SESSION['hayErrores']))?
@@ -30,21 +32,21 @@ $_SESSION['hayErrores'] = (isset ($_SESSION['hayErrores']))?
             </div>
             <?php
                 if ($_SESSION['errores'][0]) {
-                    echo "Error en el nombre de producto";
+                    echo "<div class 'error'>".MSG_ERR_NOMBRE."</div>";
                 }
             ?>
             <div>Precio Unidad <input type="text" name="PrecioUnidad" value="<?php echo $_SESSION['datos'][1]; ?>"/></div>
             </div>
              <?php
                 if ($_SESSION['errores'][1]) {
-                    echo "error en el precio";
+                    echo "<div class 'error'>".MSG_ERR_PRECIO."</div>";
                 }
             ?>
              <div>Existencias <input type="text" name="UnidadesExistencia" value="<?php echo $_SESSION['datos'][2]; ?>"/></div>
             </div>
              <?php
                 if ($_SESSION['errores'][2]) {
-                    echo "error en las existencias";
+                    echo "<div class 'error'>".MSG_ERR_EXISTENCIAS."</div>";
                 }
             ?>
             <input type="submit" value="Grabar" />

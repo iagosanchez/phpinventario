@@ -10,7 +10,9 @@
 
 
 define('MSG_ERR', "Error...");
-
+define('MSG_ERR_NOMBRE', "Error en el nombre");
+define('MSG_ERR_PRECIO', "Error en el precio");
+define('MSG_ERR_EXISTENCIAS', "Error en las existencias");
 
 /**
  * Limpia entrada text

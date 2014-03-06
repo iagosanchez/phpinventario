@@ -39,9 +39,9 @@ if ($_SESSION['hayErrores']) {
 }else{
 
     $db = conectaBd();
-    $nombre_producto = $_REQUEST['NombreProducto'];
-    $precio_unidad = $_REQUEST['PrecioUnidad'];
-    $unidades_existencia =  $_REQUEST['UnidadesExistencia'];
+    $nombre_producto = $_SESSION['datos'][0];
+    $precio_unidad = $_SESSION['datos'][1];
+    $unidades_existencia =  $_SESSION['datos'][2];
     
     $consulta = "INSERT INTO producto 
     (NombreProducto, PrecioUnidad, UnidadesExistencia)
