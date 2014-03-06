@@ -18,26 +18,29 @@ require_once 'bbdd.php';
 
 
 $_SESSION['IdProducto'] = (isset ($_REQUEST['IdProducto']))?
-        $_REQUEST['IdProducto']:$_SESSION['IdProducto'];
+        $_REQUEST['IdProducto']:0;
 
 $bd = conectaBd();
-$consulta = "SELECT * FROM producto WHERE IdProducto=".$_SESSION['IdProducto'];
-$resultado = $bd ->query($consulta);
+
+$consulta = "SELECT * FROM producto WHERE IdProducto=".$_SESSION['NombreProducto'];
+$resultado = $bd ->prepare($consulta);
+
 if (!$resultado){
     $url = "error.php?msg_error=error_Consulta_Editar";
-    header('Location:', $url);
+   header('Location:', $url);
     
 } else {
        $registro = $resultado->fetch();
        
       if(!$registro) {
-           $url = "error.php?msg_error=Error_Registro_Producto_inexistente";
-          header('Location:'.$url);
+         $url = "error.php?msg_error=Error_Registro_Producto_inexistente";
+        header('Location:'.$url);
            
        } else {
            $_SESSION['datos'][0] = $registro['NombreProducto'];
            $_SESSION['datos'][1] = $registro['PrecioUnidad'];
            $_SESSION['datos'][2] = $registro['UnidadesExistencia'];
+           
            echo "<table border=1>";
            echo "<tr>";
            echo "<th>ID Producto</th>";
@@ -68,7 +71,7 @@ if (!$resultado){
         <meta name="viewport" content="width=device-width">
     </head>
     <body>
-        <div><a href="listado_software.php">Cancelar</a>
-        <a href="borrar_software.php">Continuar</a></div>
+        <div><a href="listado.php">Cancelar</a>
+        <a href="borrar.php">Continuar</a></div>
     </body>
 </html>
