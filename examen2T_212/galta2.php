@@ -49,6 +49,11 @@ if ($_SESSION['hayErrores']) {
     $resultado = $db->prepare($consulta);
     if ($resultado->execute(array(":nombre_producto" => $nombre_producto, ":precio_unidad" => $precio_unidad,
         ":unidades_existencia" => $unidades_existencia))) {
+        
+        unset ($_SESSION['datos']);
+        unset ($_SESSION['errores']);
+        unset ($_SESSION['hayErrores']);
+        
         $url = "listado.php";
         header('Location:'.$url);
     } else {

@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 $_SESSION['datos'] = (isset ($_SESSION['datos']))?
         $_SESSION['datos']:Array ("", "","");
 $_SESSION['errores'] = (isset ($_SESSION['errores']))?
