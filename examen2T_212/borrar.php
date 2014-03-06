@@ -11,7 +11,7 @@ $db = conectaBd();
         WHERE IdProducto= :IdProducto";
     
     $resultado = $db->prepare($consulta);
-    if ($resultado->execute(array(":IdProducto" => $IdProducto))) {
+    if ($resultado->execute(array(":IdProducto" => $id))) {
         //vaciamos las variables de sesión si todo va bien.
         unset ($_SESSION['datos']);
         unset ($_SESSION['errores']);

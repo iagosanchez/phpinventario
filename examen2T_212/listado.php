@@ -44,8 +44,9 @@ and open the template in the editor.
                     echo "<tr>";
                     echo "<td>".$registro['NombreProducto']."</td>";
                     echo "<td align=right>".formatoMoneda($registro['PrecioUnidad'])."</td>";
-                    echo "<td align=right>".$registro['UnidadesExistencia']."</td>";        
-                    echo "<td><a href='cborrar.php'>Borrar</a></td>";
+                    echo "<td align=right>".$registro['UnidadesExistencia']."</td>";
+                    $irBorrar = "cborrar.php?IdProducto=".$registro['IdProducto'];
+                    echo "<td><a href=".$irBorrar.">Borrar</a></td>";
                 }
                 echo "</table>";
             }

@@ -12,7 +12,7 @@ and open the template in the editor.
         <link rel="stylesheet" href="estilo.css">
     </head>
     <body>
-        <div class="caja"><?php<?php
+        <div class="caja"><?php
 session_start();
 if (!isset($_SESSION['usuario'])) {
     $url="error.php?msg_error=REQUIERE_LOGIN";
