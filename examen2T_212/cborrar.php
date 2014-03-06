@@ -14,11 +14,11 @@
 
 <?php
 session_start();
-require_once 'func.php';
+require_once 'bbdd.php';
 
 
 $_SESSION['IdProducto'] = (isset ($_REQUEST['IdProducto']))?
-        $_REQUEST['IdProducto']:0;
+        $_REQUEST['IdProducto']:$_SESSION['IdProducto'];
 
 $bd = conectaBd();
 $consulta = "SELECT * FROM producto WHERE IdProducto=".$_SESSION['IdProducto'];
@@ -26,11 +26,14 @@ $resultado = $bd ->query($consulta);
 if (!$resultado){
     $url = "error.php?msg_error=error_Consulta_Editar";
     header('Location:', $url);
+    
 } else {
        $registro = $resultado->fetch();
-       if(!$registro) {
-           $url = "error.php?msg_error=Error_Registro_Software_inexistente";
-           header('Location:'.$url);
+       
+      if(!$registro) {
+           $url = "error.php?msg_error=Error_Registro_Producto_inexistente";
+          header('Location:'.$url);
+           
        } else {
            $_SESSION['datos'][0] = $registro['NombreProducto'];
            $_SESSION['datos'][1] = $registro['PrecioUnidad'];

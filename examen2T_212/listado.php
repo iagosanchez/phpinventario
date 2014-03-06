@@ -24,6 +24,7 @@ and open the template in the editor.
         <li><a href="falta1.php">Alta Producto (sin validacion)</a></li>
         <li><a href="falta2.php">Alta Producto (con validacion)</a></li>
         </ul>
+        
         <?php
             $bd = conectaBd();
             $consulta = "SELECT * FROM producto ORDER By NombreProducto";
