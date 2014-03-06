@@ -14,6 +14,7 @@ and open the template in the editor.
     <body>
         <div class="login">&nbsp;</div>
         <h1>Acceso</h1>
+        <div><a href="falta1.php">Registro usuarios</a></div>
         <ul>
         <li><a href="index.php">Inicio</a></li>            
         </ul>
@@ -22,5 +23,6 @@ and open the template in the editor.
             <div>Password: <input type="password" name="password" /></div>
             <div><input type="submit" value="Entrar" /></div>
         </form>
+        
     </body>
 </html>
